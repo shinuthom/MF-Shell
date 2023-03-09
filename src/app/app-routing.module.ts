@@ -9,6 +9,8 @@ import {
   WebComponentWrapperOptions,
 } from '@angular-architects/module-federation-tools';
 
+import { environment } from '../environments/environment';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {
@@ -27,7 +29,7 @@ const routes: Routes = [
     path: 'users',
     loadChildren: () =>
       loadRemoteModule({
-        remoteEntry: 'http://localhost:4201/remoteEntry.js',
+        remoteEntry: `${environment.mfUserPortal}/remoteEntry.js`,
         type: 'module',
         exposedModule: './Module',
       }).then((m) => {
