@@ -1,0 +1,32 @@
+<div class="container">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" routerLink='/'>Home </a>
+        <a class="nav-item nav-link" routerLink='/customers'>Customers</a>
+        <a class="nav-item nav-link" routerLink='/users'>Users(Micro APP) <span style="color:red;">{{cart}}</span></a>
+        <a class="nav-item nav-link" routerLink='/react'>React(Micro APP)</a>
+        
+        
+        <div *ngIf="(isAuthenticated$ | async) === false; else logout">
+            <a class="nav-item nav-link" (click)="signIn()">Login</a>
+        </div>
+        <ng-template #logout>
+            <a class="nav-item nav-link" *ngIf="name$ | async as name">Hello {{name}}</a><a class="nav-item nav-link" (click)="signOut()">Logout</a>
+        </ng-template>
+      </div>
+    </div>
+  </nav>
+<router-outlet></router-outlet><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+      <a href="/"> MDBootstrap.com</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+</div>
