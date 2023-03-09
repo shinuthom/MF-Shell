@@ -29,7 +29,7 @@ const routes: Routes = [
     path: 'users',
     loadChildren: () =>
       loadRemoteModule({
-        remoteEntry: `${environment.mfUserPortal}/remoteEntry.js`,
+        remoteEntry: `${environment.mfUserPortal}remoteEntry.js`,
         type: 'module',
         exposedModule: './Module',
       }).then((m) => {
