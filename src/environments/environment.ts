@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  mfUserPortal: 'https://mf-users-shinuthom.vercel.app/',
+  mfUserPortal: 'http://localhost:4201/',
 };
 
 /*
